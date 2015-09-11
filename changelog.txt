@@ -1,0 +1,36 @@
+# Change Log
+
+## [0.1.0] - 2015.09.10
+### Added
+- APA Style Generation: Books, ebooks
+### Modified
+- Major overhaul of program design
+- new repo
+### Todo
+- Ensure capitalization of proper nouns (eg. Publisher, etc.)
+- MLA Style Generation: Books, ebooks
+
+## [0.0.2] - 2015.09.09
+### Added
+- Citation Styles (APA, MLA) Options
+- APA Style Generation (Limited)
+### Todo
+- APA: Support multiple media
+- Support multiple authors (!)
+
+## [0.0.1] - 2015.09.08
+### Added
+- All labels
+- All appropriate text boxes
+- Copy button
+### Modified
+- Textboxes to Rich textboxes
+### Todo
+- Display citation text as generated output
+= Including several forms of media
+- Add 'n' authors
+- Add different citation styles
+
+================================
+! = bonus feature
+? = confused

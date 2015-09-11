@@ -1,0 +1,13 @@
+D:\WindowsFormsApplication1\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.exe.config
+D:\WindowsFormsApplication1\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.exe
+D:\WindowsFormsApplication1\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.pdb
+D:\WindowsFormsApplication1\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.exe
+D:\WindowsFormsApplication1\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.pdb
+D:\WindowsFormsApplication1\WindowsFormsApplication1\obj\Debug\CitationTool.csprojResolveAssemblyReference.cache
+D:\WindowsFormsApplication1\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.apaWindow.resources
+D:\WindowsFormsApplication1\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.citationStyleWindow.resources
+D:\WindowsFormsApplication1\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Properties.Resources.resources
+D:\WindowsFormsApplication1\WindowsFormsApplication1\obj\Debug\CitationTool.csproj.GenerateResource.Cache
+D:\CitationTool\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.exe.config
+D:\CitationTool\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.exe
+D:\CitationTool\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.pdb
