@@ -1,8 +1,18 @@
 # Change Log
 
+## [1.0] - 2015.09.11
+### Added
+- MLA Style Generation: Books, eBooks
+- Capitalization of appropriate characters
+### Modified
+- Divided some functions over smaller functions
+### Todo
+- Support multiple media (e.g., websites)(!)
+- Support more citation styles (!)
+
 ## [0.1.0] - 2015.09.10
 ### Added
-- APA Style Generation: Books, ebooks
+- APA Style Generation: Books, eBooks
 ### Modified
 - Major overhaul of program design
 - new repo
@@ -28,7 +38,7 @@
 ### Todo
 - Display citation text as generated output
 = Including several forms of media
-- Add 'n' authors
+- Support multiple authors (!)
 - Add different citation styles
 
 ================================

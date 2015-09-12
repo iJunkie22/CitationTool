@@ -44,6 +44,7 @@ namespace WindowsFormsApplication1
                 else if (styleBox.SelectedIndex == 1)
                 {
                     mlaWindow mla = new mlaWindow();
+                    mla.setMedium(mediaBox.SelectedIndex);
                     mla.ShowDialog();
                 }
                 

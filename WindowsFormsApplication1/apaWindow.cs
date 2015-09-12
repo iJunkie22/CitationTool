@@ -36,6 +36,7 @@ namespace WindowsFormsApplication1
 
         private void button1_Click(object sender, EventArgs e)
         {
+            capitalizeFirstLetter();
             outputBox.Text = lastAuthorBox.Text + ", " ;
             // Get Initials
             try {
@@ -49,14 +50,9 @@ namespace WindowsFormsApplication1
             catch {
                 MessageBox.Show("Author Names cannot be blank.");
             }
+            
             outputBox.AppendText(" " + yearBox.Text + ". ");
-            // Italicize title
-            outputBox.AppendText(titleBox.Text);
-            int titleStart = lastAuthorBox.Text.Length + 2 + 2 * initialsCount + 7;
-            outputBox.Select(titleStart, titleBox.Text.Length-1);
-            Console.Write(titleBox.Text.Length);
-            outputBox.SelectionFont = new Font(outputBox.Font, FontStyle.Italic);
-            outputBox.Select(0, 0);
+            italicizeTitle();
 
             //If Book
             if (medium == 0)
@@ -83,6 +79,26 @@ namespace WindowsFormsApplication1
             m_data.SetData(DataFormats.Text, true, outputBox.Text);
             Clipboard.SetDataObject(m_data, true);
             MessageBox.Show("Copied to Clipboard!");
+        }
+
+        private void capitalizeFirstLetter()
+        {
+            //Capitalize first letter of each appropriate box
+            titleBox.Text = titleBox.Text.Substring(0, 1).ToUpper() + titleBox.Text.Substring(1);
+            cityBox.Text = cityBox.Text.Substring(0, 1).ToUpper() + cityBox.Text.Substring(1);
+            lastAuthorBox.Text = lastAuthorBox.Text.Substring(0, 1).ToUpper() + lastAuthorBox.Text.Substring(1);
+            publisherBox.Text = publisherBox.Text.Substring(0, 1).ToUpper() + publisherBox.Text.Substring(1);
+        }
+
+        private void italicizeTitle()
+        {
+            // Italicize title
+            outputBox.AppendText(titleBox.Text);
+            int titleStart = lastAuthorBox.Text.Length + 2 + 2 * initialsCount + 7;
+            outputBox.Select(titleStart, titleBox.Text.Length - 1);
+            Console.Write(titleBox.Text.Length);
+            outputBox.SelectionFont = new Font(outputBox.Font, FontStyle.Italic);
+            outputBox.Select(0, 0);
         }
     }
 }

@@ -54,7 +54,7 @@
             // titleLabel
             // 
             this.titleLabel.AutoSize = true;
-            this.titleLabel.Location = new System.Drawing.Point(12, 33);
+            this.titleLabel.Location = new System.Drawing.Point(12, 29);
             this.titleLabel.Name = "titleLabel";
             this.titleLabel.Size = new System.Drawing.Size(30, 13);
             this.titleLabel.TabIndex = 0;
@@ -63,7 +63,7 @@
             // authorLabel
             // 
             this.authorLabel.AutoSize = true;
-            this.authorLabel.Location = new System.Drawing.Point(12, 55);
+            this.authorLabel.Location = new System.Drawing.Point(12, 51);
             this.authorLabel.Name = "authorLabel";
             this.authorLabel.Size = new System.Drawing.Size(38, 13);
             this.authorLabel.TabIndex = 1;
@@ -72,7 +72,7 @@
             // firstAuthorLabel
             // 
             this.firstAuthorLabel.AutoSize = true;
-            this.firstAuthorLabel.Location = new System.Drawing.Point(22, 77);
+            this.firstAuthorLabel.Location = new System.Drawing.Point(22, 73);
             this.firstAuthorLabel.Name = "firstAuthorLabel";
             this.firstAuthorLabel.Size = new System.Drawing.Size(60, 13);
             this.firstAuthorLabel.TabIndex = 2;
@@ -81,7 +81,7 @@
             // lastAuthorLabel
             // 
             this.lastAuthorLabel.AutoSize = true;
-            this.lastAuthorLabel.Location = new System.Drawing.Point(22, 102);
+            this.lastAuthorLabel.Location = new System.Drawing.Point(22, 98);
             this.lastAuthorLabel.Name = "lastAuthorLabel";
             this.lastAuthorLabel.Size = new System.Drawing.Size(61, 13);
             this.lastAuthorLabel.TabIndex = 3;
@@ -90,7 +90,7 @@
             // yearLabel
             // 
             this.yearLabel.AutoSize = true;
-            this.yearLabel.Location = new System.Drawing.Point(111, 132);
+            this.yearLabel.Location = new System.Drawing.Point(111, 128);
             this.yearLabel.Name = "yearLabel";
             this.yearLabel.Size = new System.Drawing.Size(32, 13);
             this.yearLabel.TabIndex = 4;
@@ -99,7 +99,7 @@
             // cityLabel
             // 
             this.cityLabel.AutoSize = true;
-            this.cityLabel.Location = new System.Drawing.Point(12, 162);
+            this.cityLabel.Location = new System.Drawing.Point(12, 158);
             this.cityLabel.Name = "cityLabel";
             this.cityLabel.Size = new System.Drawing.Size(27, 13);
             this.cityLabel.TabIndex = 5;
@@ -108,7 +108,7 @@
             // stateLabel
             // 
             this.stateLabel.AutoSize = true;
-            this.stateLabel.Location = new System.Drawing.Point(12, 132);
+            this.stateLabel.Location = new System.Drawing.Point(12, 128);
             this.stateLabel.Name = "stateLabel";
             this.stateLabel.Size = new System.Drawing.Size(35, 13);
             this.stateLabel.TabIndex = 6;
@@ -117,7 +117,7 @@
             // publisherLabel
             // 
             this.publisherLabel.AutoSize = true;
-            this.publisherLabel.Location = new System.Drawing.Point(12, 192);
+            this.publisherLabel.Location = new System.Drawing.Point(12, 188);
             this.publisherLabel.Name = "publisherLabel";
             this.publisherLabel.Size = new System.Drawing.Size(53, 13);
             this.publisherLabel.TabIndex = 7;
@@ -125,28 +125,28 @@
             // 
             // titleBox
             // 
-            this.titleBox.Location = new System.Drawing.Point(48, 30);
+            this.titleBox.Location = new System.Drawing.Point(48, 26);
             this.titleBox.Name = "titleBox";
             this.titleBox.Size = new System.Drawing.Size(224, 20);
             this.titleBox.TabIndex = 0;
             // 
             // firstAuthorBox
             // 
-            this.firstAuthorBox.Location = new System.Drawing.Point(88, 74);
+            this.firstAuthorBox.Location = new System.Drawing.Point(88, 70);
             this.firstAuthorBox.Name = "firstAuthorBox";
             this.firstAuthorBox.Size = new System.Drawing.Size(184, 20);
             this.firstAuthorBox.TabIndex = 1;
             // 
             // lastAuthorBox
             // 
-            this.lastAuthorBox.Location = new System.Drawing.Point(88, 99);
+            this.lastAuthorBox.Location = new System.Drawing.Point(88, 95);
             this.lastAuthorBox.Name = "lastAuthorBox";
             this.lastAuthorBox.Size = new System.Drawing.Size(184, 20);
             this.lastAuthorBox.TabIndex = 2;
             // 
             // yearBox
             // 
-            this.yearBox.Location = new System.Drawing.Point(149, 129);
+            this.yearBox.Location = new System.Drawing.Point(149, 125);
             this.yearBox.MaxLength = 4;
             this.yearBox.Name = "yearBox";
             this.yearBox.Size = new System.Drawing.Size(42, 20);
@@ -154,7 +154,7 @@
             // 
             // stateBox
             // 
-            this.stateBox.Location = new System.Drawing.Point(48, 129);
+            this.stateBox.Location = new System.Drawing.Point(48, 125);
             this.stateBox.MaxLength = 2;
             this.stateBox.Name = "stateBox";
             this.stateBox.Size = new System.Drawing.Size(42, 20);
@@ -162,14 +162,14 @@
             // 
             // cityBox
             // 
-            this.cityBox.Location = new System.Drawing.Point(48, 159);
+            this.cityBox.Location = new System.Drawing.Point(48, 155);
             this.cityBox.Name = "cityBox";
             this.cityBox.Size = new System.Drawing.Size(100, 20);
             this.cityBox.TabIndex = 5;
             // 
             // publisherBox
             // 
-            this.publisherBox.Location = new System.Drawing.Point(71, 189);
+            this.publisherBox.Location = new System.Drawing.Point(71, 185);
             this.publisherBox.Name = "publisherBox";
             this.publisherBox.Size = new System.Drawing.Size(201, 20);
             this.publisherBox.TabIndex = 6;
@@ -177,7 +177,7 @@
             // outputLabel
             // 
             this.outputLabel.AutoSize = true;
-            this.outputLabel.Location = new System.Drawing.Point(15, 240);
+            this.outputLabel.Location = new System.Drawing.Point(15, 236);
             this.outputLabel.Name = "outputLabel";
             this.outputLabel.Size = new System.Drawing.Size(42, 13);
             this.outputLabel.TabIndex = 15;
@@ -185,7 +185,7 @@
             // 
             // outputBox
             // 
-            this.outputBox.Location = new System.Drawing.Point(25, 256);
+            this.outputBox.Location = new System.Drawing.Point(25, 252);
             this.outputBox.Name = "outputBox";
             this.outputBox.Size = new System.Drawing.Size(247, 42);
             this.outputBox.TabIndex = 10;
@@ -193,7 +193,7 @@
             // 
             // generateButton
             // 
-            this.generateButton.Location = new System.Drawing.Point(197, 304);
+            this.generateButton.Location = new System.Drawing.Point(197, 300);
             this.generateButton.Name = "generateButton";
             this.generateButton.Size = new System.Drawing.Size(75, 23);
             this.generateButton.TabIndex = 8;
@@ -203,7 +203,7 @@
             // 
             // urlBox
             // 
-            this.urlBox.Location = new System.Drawing.Point(71, 215);
+            this.urlBox.Location = new System.Drawing.Point(71, 211);
             this.urlBox.Name = "urlBox";
             this.urlBox.Size = new System.Drawing.Size(201, 20);
             this.urlBox.TabIndex = 7;
@@ -211,7 +211,7 @@
             // urlLabel
             // 
             this.urlLabel.AutoSize = true;
-            this.urlLabel.Location = new System.Drawing.Point(12, 218);
+            this.urlLabel.Location = new System.Drawing.Point(12, 214);
             this.urlLabel.Name = "urlLabel";
             this.urlLabel.Size = new System.Drawing.Size(32, 13);
             this.urlLabel.TabIndex = 19;
@@ -219,7 +219,7 @@
             // 
             // copyButton
             // 
-            this.copyButton.Location = new System.Drawing.Point(25, 304);
+            this.copyButton.Location = new System.Drawing.Point(25, 300);
             this.copyButton.Name = "copyButton";
             this.copyButton.Size = new System.Drawing.Size(75, 23);
             this.copyButton.TabIndex = 9;
@@ -254,7 +254,7 @@
             this.Controls.Add(this.authorLabel);
             this.Controls.Add(this.titleLabel);
             this.Name = "apaWindow";
-            this.Text = "CitationTool 0.1";
+            this.Text = "CitationTool 1.0";
             this.Load += new System.EventHandler(this.apaWindow_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -284,5 +284,7 @@
         private System.Windows.Forms.TextBox urlBox;
         private System.Windows.Forms.Label urlLabel;
         private System.Windows.Forms.Button copyButton;
+
+
     }
 }

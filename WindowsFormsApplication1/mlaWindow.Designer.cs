@@ -28,11 +28,260 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            this.copyButton = new System.Windows.Forms.Button();
+            this.urlLabel = new System.Windows.Forms.Label();
+            this.urlBox = new System.Windows.Forms.TextBox();
+            this.generateButton = new System.Windows.Forms.Button();
+            this.outputBox = new System.Windows.Forms.RichTextBox();
+            this.outputLabel = new System.Windows.Forms.Label();
+            this.publisherBox = new System.Windows.Forms.TextBox();
+            this.cityBox = new System.Windows.Forms.TextBox();
+            this.stateBox = new System.Windows.Forms.TextBox();
+            this.yearBox = new System.Windows.Forms.TextBox();
+            this.lastAuthorBox = new System.Windows.Forms.TextBox();
+            this.firstAuthorBox = new System.Windows.Forms.TextBox();
+            this.titleBox = new System.Windows.Forms.TextBox();
+            this.publisherLabel = new System.Windows.Forms.Label();
+            this.stateLabel = new System.Windows.Forms.Label();
+            this.cityLabel = new System.Windows.Forms.Label();
+            this.yearLabel = new System.Windows.Forms.Label();
+            this.lastAuthorLabel = new System.Windows.Forms.Label();
+            this.firstAuthorLabel = new System.Windows.Forms.Label();
+            this.authorLabel = new System.Windows.Forms.Label();
+            this.titleLabel = new System.Windows.Forms.Label();
+            this.SuspendLayout();
+            // 
+            // copyButton
+            // 
+            this.copyButton.Location = new System.Drawing.Point(25, 300);
+            this.copyButton.Name = "copyButton";
+            this.copyButton.Size = new System.Drawing.Size(75, 23);
+            this.copyButton.TabIndex = 37;
+            this.copyButton.Text = "Copy";
+            this.copyButton.UseVisualStyleBackColor = true;
+            this.copyButton.Click += new System.EventHandler(this.copyButton_Click);
+            // 
+            // urlLabel
+            // 
+            this.urlLabel.AutoSize = true;
+            this.urlLabel.Location = new System.Drawing.Point(12, 214);
+            this.urlLabel.Name = "urlLabel";
+            this.urlLabel.Size = new System.Drawing.Size(32, 13);
+            this.urlLabel.TabIndex = 40;
+            this.urlLabel.Text = "URL:";
+            // 
+            // urlBox
+            // 
+            this.urlBox.Location = new System.Drawing.Point(71, 211);
+            this.urlBox.Name = "urlBox";
+            this.urlBox.Size = new System.Drawing.Size(201, 20);
+            this.urlBox.TabIndex = 34;
+            // 
+            // generateButton
+            // 
+            this.generateButton.Location = new System.Drawing.Point(197, 300);
+            this.generateButton.Name = "generateButton";
+            this.generateButton.Size = new System.Drawing.Size(75, 23);
+            this.generateButton.TabIndex = 36;
+            this.generateButton.Text = "Generate";
+            this.generateButton.UseVisualStyleBackColor = true;
+            this.generateButton.Click += new System.EventHandler(this.generateButton_Click);
+            // 
+            // outputBox
+            // 
+            this.outputBox.Location = new System.Drawing.Point(25, 252);
+            this.outputBox.Name = "outputBox";
+            this.outputBox.Size = new System.Drawing.Size(247, 42);
+            this.outputBox.TabIndex = 38;
+            this.outputBox.Text = "";
+            // 
+            // outputLabel
+            // 
+            this.outputLabel.AutoSize = true;
+            this.outputLabel.Location = new System.Drawing.Point(15, 236);
+            this.outputLabel.Name = "outputLabel";
+            this.outputLabel.Size = new System.Drawing.Size(42, 13);
+            this.outputLabel.TabIndex = 39;
+            this.outputLabel.Text = "Output:";
+            // 
+            // publisherBox
+            // 
+            this.publisherBox.Location = new System.Drawing.Point(71, 185);
+            this.publisherBox.Name = "publisherBox";
+            this.publisherBox.Size = new System.Drawing.Size(201, 20);
+            this.publisherBox.TabIndex = 32;
+            // 
+            // cityBox
+            // 
+            this.cityBox.Location = new System.Drawing.Point(48, 155);
+            this.cityBox.Name = "cityBox";
+            this.cityBox.Size = new System.Drawing.Size(100, 20);
+            this.cityBox.TabIndex = 30;
+            // 
+            // stateBox
+            // 
+            this.stateBox.Location = new System.Drawing.Point(48, 125);
+            this.stateBox.MaxLength = 2;
+            this.stateBox.Name = "stateBox";
+            this.stateBox.Size = new System.Drawing.Size(42, 20);
+            this.stateBox.TabIndex = 26;
+            // 
+            // yearBox
+            // 
+            this.yearBox.Location = new System.Drawing.Point(149, 125);
+            this.yearBox.MaxLength = 4;
+            this.yearBox.Name = "yearBox";
+            this.yearBox.Size = new System.Drawing.Size(42, 20);
+            this.yearBox.TabIndex = 28;
+            // 
+            // lastAuthorBox
+            // 
+            this.lastAuthorBox.Location = new System.Drawing.Point(88, 95);
+            this.lastAuthorBox.Name = "lastAuthorBox";
+            this.lastAuthorBox.Size = new System.Drawing.Size(184, 20);
+            this.lastAuthorBox.TabIndex = 25;
+            // 
+            // firstAuthorBox
+            // 
+            this.firstAuthorBox.Location = new System.Drawing.Point(88, 70);
+            this.firstAuthorBox.Name = "firstAuthorBox";
+            this.firstAuthorBox.Size = new System.Drawing.Size(184, 20);
+            this.firstAuthorBox.TabIndex = 22;
+            // 
+            // titleBox
+            // 
+            this.titleBox.Location = new System.Drawing.Point(48, 26);
+            this.titleBox.Name = "titleBox";
+            this.titleBox.Size = new System.Drawing.Size(224, 20);
+            this.titleBox.TabIndex = 21;
+            // 
+            // publisherLabel
+            // 
+            this.publisherLabel.AutoSize = true;
+            this.publisherLabel.Location = new System.Drawing.Point(12, 188);
+            this.publisherLabel.Name = "publisherLabel";
+            this.publisherLabel.Size = new System.Drawing.Size(53, 13);
+            this.publisherLabel.TabIndex = 35;
+            this.publisherLabel.Text = "Publisher:";
+            // 
+            // stateLabel
+            // 
+            this.stateLabel.AutoSize = true;
+            this.stateLabel.Location = new System.Drawing.Point(12, 128);
+            this.stateLabel.Name = "stateLabel";
+            this.stateLabel.Size = new System.Drawing.Size(35, 13);
+            this.stateLabel.TabIndex = 33;
+            this.stateLabel.Text = "State:";
+            // 
+            // cityLabel
+            // 
+            this.cityLabel.AutoSize = true;
+            this.cityLabel.Location = new System.Drawing.Point(12, 158);
+            this.cityLabel.Name = "cityLabel";
+            this.cityLabel.Size = new System.Drawing.Size(27, 13);
+            this.cityLabel.TabIndex = 31;
+            this.cityLabel.Text = "City:";
+            // 
+            // yearLabel
+            // 
+            this.yearLabel.AutoSize = true;
+            this.yearLabel.Location = new System.Drawing.Point(111, 128);
+            this.yearLabel.Name = "yearLabel";
+            this.yearLabel.Size = new System.Drawing.Size(32, 13);
+            this.yearLabel.TabIndex = 29;
+            this.yearLabel.Text = "Year:";
+            // 
+            // lastAuthorLabel
+            // 
+            this.lastAuthorLabel.AutoSize = true;
+            this.lastAuthorLabel.Location = new System.Drawing.Point(22, 98);
+            this.lastAuthorLabel.Name = "lastAuthorLabel";
+            this.lastAuthorLabel.Size = new System.Drawing.Size(61, 13);
+            this.lastAuthorLabel.TabIndex = 27;
+            this.lastAuthorLabel.Text = "Last Name:";
+            // 
+            // firstAuthorLabel
+            // 
+            this.firstAuthorLabel.AutoSize = true;
+            this.firstAuthorLabel.Location = new System.Drawing.Point(22, 73);
+            this.firstAuthorLabel.Name = "firstAuthorLabel";
+            this.firstAuthorLabel.Size = new System.Drawing.Size(60, 13);
+            this.firstAuthorLabel.TabIndex = 24;
+            this.firstAuthorLabel.Text = "First Name:";
+            // 
+            // authorLabel
+            // 
+            this.authorLabel.AutoSize = true;
+            this.authorLabel.Location = new System.Drawing.Point(12, 51);
+            this.authorLabel.Name = "authorLabel";
+            this.authorLabel.Size = new System.Drawing.Size(38, 13);
+            this.authorLabel.TabIndex = 23;
+            this.authorLabel.Text = "Author";
+            // 
+            // titleLabel
+            // 
+            this.titleLabel.AutoSize = true;
+            this.titleLabel.Location = new System.Drawing.Point(12, 29);
+            this.titleLabel.Name = "titleLabel";
+            this.titleLabel.Size = new System.Drawing.Size(30, 13);
+            this.titleLabel.TabIndex = 20;
+            this.titleLabel.Text = "Title:";
+            // 
+            // mlaWindow
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Text = "mlaWindow";
+            this.ClientSize = new System.Drawing.Size(284, 335);
+            this.Controls.Add(this.copyButton);
+            this.Controls.Add(this.urlLabel);
+            this.Controls.Add(this.urlBox);
+            this.Controls.Add(this.generateButton);
+            this.Controls.Add(this.outputBox);
+            this.Controls.Add(this.outputLabel);
+            this.Controls.Add(this.publisherBox);
+            this.Controls.Add(this.cityBox);
+            this.Controls.Add(this.stateBox);
+            this.Controls.Add(this.yearBox);
+            this.Controls.Add(this.lastAuthorBox);
+            this.Controls.Add(this.firstAuthorBox);
+            this.Controls.Add(this.titleBox);
+            this.Controls.Add(this.publisherLabel);
+            this.Controls.Add(this.stateLabel);
+            this.Controls.Add(this.cityLabel);
+            this.Controls.Add(this.yearLabel);
+            this.Controls.Add(this.lastAuthorLabel);
+            this.Controls.Add(this.firstAuthorLabel);
+            this.Controls.Add(this.authorLabel);
+            this.Controls.Add(this.titleLabel);
+            this.Name = "mlaWindow";
+            this.Text = "CitationTool 1.0";
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
         }
 
         #endregion
+
+        private System.Windows.Forms.Button copyButton;
+        private System.Windows.Forms.Label urlLabel;
+        private System.Windows.Forms.TextBox urlBox;
+        private System.Windows.Forms.Button generateButton;
+        private System.Windows.Forms.RichTextBox outputBox;
+        private System.Windows.Forms.Label outputLabel;
+        private System.Windows.Forms.TextBox publisherBox;
+        private System.Windows.Forms.TextBox cityBox;
+        private System.Windows.Forms.TextBox stateBox;
+        private System.Windows.Forms.TextBox yearBox;
+        private System.Windows.Forms.TextBox lastAuthorBox;
+        private System.Windows.Forms.TextBox firstAuthorBox;
+        private System.Windows.Forms.TextBox titleBox;
+        private System.Windows.Forms.Label publisherLabel;
+        private System.Windows.Forms.Label stateLabel;
+        private System.Windows.Forms.Label cityLabel;
+        private System.Windows.Forms.Label yearLabel;
+        private System.Windows.Forms.Label lastAuthorLabel;
+        private System.Windows.Forms.Label firstAuthorLabel;
+        private System.Windows.Forms.Label authorLabel;
+        private System.Windows.Forms.Label titleLabel;
     }
 }

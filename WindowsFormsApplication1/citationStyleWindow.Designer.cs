@@ -98,7 +98,7 @@
             this.Controls.Add(this.styleLabel);
             this.Controls.Add(this.styleBox);
             this.Name = "citationStyleWindow";
-            this.Text = "CitationTool 0.1";
+            this.Text = "CitationTool 1.0";
             this.ResumeLayout(false);
             this.PerformLayout();
 
