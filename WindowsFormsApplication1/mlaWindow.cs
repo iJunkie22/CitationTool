@@ -37,7 +37,13 @@ namespace WindowsFormsApplication1
 
         private void generateButton_Click(object sender, EventArgs e)
         {
-            capitalizeFirstLetter();
+			outputBox.ReadOnly = false;
+			if (!capitalizeFirstLetter ()) {
+				outputBox.Text = "Invalid Fields";
+				outputBox.ReadOnly = true;
+				return; // Stop progression
+			};
+
             outputBox.Text = lastAuthorBox.Text + ", ";
             // Capitalize first letter of each name
             try
@@ -55,6 +61,9 @@ namespace WindowsFormsApplication1
             catch
             {
                 MessageBox.Show("Author Names cannot be blank.");
+				outputBox.Text = "Invalid Fields";
+				outputBox.ReadOnly = true;
+				return; // Stop progression
             }
 
             outputBox.AppendText(". ");
@@ -80,7 +89,7 @@ namespace WindowsFormsApplication1
             MessageBox.Show("Copied to Clipboard!");
         }
 
-        private void capitalizeFirstLetter()
+        private bool capitalizeFirstLetter()
         {
             try
             {
@@ -91,10 +100,12 @@ namespace WindowsFormsApplication1
                 lastAuthorBox.Text = lastAuthorBox.Text.Substring(0, 1).ToUpper() + lastAuthorBox.Text.Substring(1);
                 publisherBox.Text = publisherBox.Text.Substring(0, 1).ToUpper() + publisherBox.Text.Substring(1);
                 stateBox.Text = stateBox.Text.ToUpper();
+				return true;
             }
             catch
             {
                 MessageBox.Show("Do not leave fields blank.");
+				return false;
             }
         }
 

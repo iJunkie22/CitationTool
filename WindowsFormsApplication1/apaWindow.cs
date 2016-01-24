@@ -36,7 +36,12 @@ namespace WindowsFormsApplication1
 
         private void button1_Click(object sender, EventArgs e)
         {
-            capitalizeFirstLetter();
+			outputBox.ReadOnly = false;
+			if (!capitalizeFirstLetter ()) {
+				outputBox.Text = "Invalid Fields";
+				outputBox.ReadOnly = true;
+				return; // Stop progression
+			};
             outputBox.Text = lastAuthorBox.Text + ", " ;
             // Get Initials
             try {
@@ -49,6 +54,9 @@ namespace WindowsFormsApplication1
             }
             catch {
                 MessageBox.Show("Author Names cannot be blank.");
+				outputBox.Text = "Invalid Fields";
+				outputBox.ReadOnly = true;
+				return; // Stop progression
             }
             
             outputBox.AppendText(" " + yearBox.Text + ". ");
@@ -81,13 +89,22 @@ namespace WindowsFormsApplication1
             MessageBox.Show("Copied to Clipboard!");
         }
 
-        private void capitalizeFirstLetter()
+        private bool capitalizeFirstLetter()
         {
-            //Capitalize first letter of each appropriate box
-            titleBox.Text = titleBox.Text.Substring(0, 1).ToUpper() + titleBox.Text.Substring(1);
-            cityBox.Text = cityBox.Text.Substring(0, 1).ToUpper() + cityBox.Text.Substring(1);
-            lastAuthorBox.Text = lastAuthorBox.Text.Substring(0, 1).ToUpper() + lastAuthorBox.Text.Substring(1);
-            publisherBox.Text = publisherBox.Text.Substring(0, 1).ToUpper() + publisherBox.Text.Substring(1);
+			try 
+			{
+            	//Capitalize first letter of each appropriate box
+            	titleBox.Text = titleBox.Text.Substring(0, 1).ToUpper() + titleBox.Text.Substring(1);
+            	cityBox.Text = cityBox.Text.Substring(0, 1).ToUpper() + cityBox.Text.Substring(1);
+            	lastAuthorBox.Text = lastAuthorBox.Text.Substring(0, 1).ToUpper() + lastAuthorBox.Text.Substring(1);
+            	publisherBox.Text = publisherBox.Text.Substring(0, 1).ToUpper() + publisherBox.Text.Substring(1);
+				return true;
+			}
+			catch
+			{
+				MessageBox.Show("Do not leave fields blank.");
+				return false;
+			}
         }
 
         private void italicizeTitle()
@@ -100,5 +117,10 @@ namespace WindowsFormsApplication1
             outputBox.SelectionFont = new Font(outputBox.Font, FontStyle.Italic);
             outputBox.Select(0, 0);
         }
+
+		private bool checkIsEmpty(TextBox tb)
+		{
+			return (tb.Text == "");
+		}
     }
 }
