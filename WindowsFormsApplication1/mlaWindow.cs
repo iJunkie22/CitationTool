@@ -115,35 +115,6 @@ namespace WindowsFormsApplication1
             MessageBox.Show("Copied to Clipboard!");
         }
 
-        private bool capitalizeFirstLetter()
-        {
-            try
-            {
-                //Capitalize appropriate letters in each appropriate box
-                titleBox.Text = titleBox.Text.Substring(0, 1).ToUpper() + titleBox.Text.Substring(1);
-                cityBox.Text = cityBox.Text.Substring(0, 1).ToUpper() + cityBox.Text.Substring(1);
-                firstAuthorBox.Text = firstAuthorBox.Text.Substring(0, 1).ToUpper() + firstAuthorBox.Text.Substring(1);
-                lastAuthorBox.Text = lastAuthorBox.Text.Substring(0, 1).ToUpper() + lastAuthorBox.Text.Substring(1);
-                publisherBox.Text = publisherBox.Text.Substring(0, 1).ToUpper() + publisherBox.Text.Substring(1);
-                stateBox.Text = stateBox.Text.ToUpper();
-				return true;
-            }
-            catch
-            {
-                MessageBox.Show("Do not leave fields blank.");
-				return false;
-            }
-        }
-
-        private void italicizeTitle()
-        {
-            // Italicize title
-            outputBox.AppendText(titleBox.Text);
-            int titleStart = lastAuthorBox.Text.Length + 2 + firstAuthorBox.Text.Length + 2;
-            outputBox.Select(titleStart, titleBox.Text.Length - 1);
-            Console.Write(titleBox.Text.Length);
-            outputBox.SelectionFont = new Font(outputBox.Font, FontStyle.Italic);
-            outputBox.Select(0, 0);
-        }
+			
     }
 }
