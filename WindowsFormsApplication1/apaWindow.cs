@@ -12,13 +12,23 @@ namespace WindowsFormsApplication1
 {
     public partial class apaWindow : Form
     {
+        /// <summary>
+        /// The medium.
+        /// </summary>
         public int medium;      // 0 = book; 1 = ebook; 2 = wiki
         int initialsCount;
+        /// <summary>
+        /// Initializes a new instance of the <see cref="WindowsFormsApplication1.apaWindow"/> class.
+        /// </summary>
         public apaWindow()
         {
             InitializeComponent();
         }
 
+        /// <summary>
+        /// Sets the medium.
+        /// </summary>
+        /// <param name="x">The x coordinate.</param>
         public void setMedium(int x)
         {
             medium = x;
@@ -60,7 +70,7 @@ namespace WindowsFormsApplication1
             }
             
             outputBox.AppendText(" " + yearBox.Text + ". ");
-            italicizeTitle();
+			fieldops.AppendAsItalic (outputBox, titleBox.Text);
 
             //If Book
             if (medium == 0)

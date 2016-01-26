@@ -61,6 +61,22 @@ namespace WindowsFormsApplication1
 				return tb_in.Text;
 			}
 		}
+
+		static public string[] GetInitials(string name_str)
+		{
+			string[] results = {""};
+			if (name_str.Length == 0) {
+				return results; // return an empty string for an empty string
+			} 
+			else {
+				string[] names = name_str.Split ();
+				for (int i = 0; i < name_str.Length; i++) {
+					results [i] = names [i].Substring (0, 1).ToUpper();
+				}
+				
+				return results;
+			}
+		}
 	}
 }
 
