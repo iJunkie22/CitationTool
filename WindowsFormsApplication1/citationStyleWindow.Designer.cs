@@ -43,7 +43,8 @@
             "MLA: Modern Language Association"});
             this.styleBox.Location = new System.Drawing.Point(87, 21);
             this.styleBox.Name = "styleBox";
-            this.styleBox.Size = new System.Drawing.Size(173, 21);
+            //this.styleBox.Size = new System.Drawing.Size(173, 21);
+			this.styleBox.Size = new System.Drawing.Size(233, 21);
             this.styleBox.TabIndex = 0;
             this.styleBox.SelectedIndexChanged += new System.EventHandler(this.styleBox_SelectedIndexChanged);
             // 
@@ -83,7 +84,8 @@
             "eBook"});
             this.mediaBox.Location = new System.Drawing.Point(87, 48);
             this.mediaBox.Name = "mediaBox";
-            this.mediaBox.Size = new System.Drawing.Size(173, 21);
+            //this.mediaBox.Size = new System.Drawing.Size(173, 21);
+			this.mediaBox.Size = new System.Drawing.Size(233, 21);
             this.mediaBox.TabIndex = 3;
             this.mediaBox.SelectedIndexChanged += new System.EventHandler(this.mediaBox_SelectedIndexChanged);
             // 
@@ -91,7 +93,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(284, 116);
+            //this.ClientSize = new System.Drawing.Size(284, 116);
+			this.ClientSize = new System.Drawing.Size(344, 116);
             this.Controls.Add(this.mediaLabel);
             this.Controls.Add(this.mediaBox);
             this.Controls.Add(this.citationStyleButton);

@@ -107,11 +107,7 @@ namespace WindowsFormsApplication1
 
         private void copyButton_Click(object sender, EventArgs e)
         {
-            DataObject m_data = new DataObject();
-
-            m_data.SetData(DataFormats.Rtf, true, outputBox.Rtf);
-            m_data.SetData(DataFormats.Text, true, outputBox.Text);
-            Clipboard.SetDataObject(m_data, true);
+			fieldops.CopyRTBtoClipboard (outputBox);
             MessageBox.Show("Copied to Clipboard!");
         }
 

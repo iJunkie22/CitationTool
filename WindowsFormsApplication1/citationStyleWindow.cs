@@ -16,6 +16,7 @@ namespace WindowsFormsApplication1
         public citationStyleWindow()
         {
             InitializeComponent();
+
             allowed = false;
             allowed2 = false;
         }

@@ -190,6 +190,7 @@
             this.outputBox.Size = new System.Drawing.Size(247, 42);
             this.outputBox.TabIndex = 10;
             this.outputBox.Text = "";
+			this.outputBox.Font = new System.Drawing.Font ("Consolas", 8);
             // 
             // generateButton
             // 
