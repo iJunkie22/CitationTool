@@ -16,6 +16,7 @@ namespace WindowsFormsApplication1
         /// The medium.
         /// </summary>
         public int medium;      // 0 = book; 1 = ebook; 2 = wiki
+		public Mediums medium2;
         int initialsCount;
         /// <summary>
         /// Initializes a new instance of the <see cref="WindowsFormsApplication1.apaWindow"/> class.
@@ -23,6 +24,7 @@ namespace WindowsFormsApplication1
         public apaWindow()
         {
             InitializeComponent();
+			medium = (int)Mediums.Undefined;
         }
 
         /// <summary>
@@ -32,11 +34,11 @@ namespace WindowsFormsApplication1
         public void setMedium(int x)
         {
             medium = x;
-            if (medium == 0)
+			if (medium == (int)Mediums.Book)
             {
                 urlBox.Enabled = false;
             }
-            else if(medium == 1)
+			else if(medium == (int)Mediums.eBook)
             {
                 cityBox.Enabled = false;
                 stateBox.Enabled = false;
@@ -73,12 +75,12 @@ namespace WindowsFormsApplication1
 			fieldops.AppendAsItalic (outputBox, titleBox.Text);
 
             //If Book
-            if (medium == 0)
+			if (medium == (int)Mediums.Book)
             {
                 outputBox.AppendText(". " + cityBox.Text + ", " + stateBox.Text.ToUpper() + ": " + publisherBox.Text + ".");
             }
             //If ebook
-            else if (medium==1)
+			else if (medium== (int)Mediums.eBook)
             {
                 outputBox.AppendText(" [E-Reader Version]. Retrieved from " + urlBox.Text);
             }

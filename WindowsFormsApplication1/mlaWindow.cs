@@ -17,18 +17,18 @@ namespace WindowsFormsApplication1
         public mlaWindow()
         {
             InitializeComponent();
-            medium = -1;
+			medium = (int)Mediums.Undefined;
         }
 
         public void setMedium(int x)
         {
             medium = x;
-            if (medium == 0)
+			if (medium == (int)Mediums.Book)
             {
                 urlBox.Enabled = false;
                 stateBox.Enabled = false;
             }
-            else if (medium == 1)
+			else if (medium == (int)Mediums.eBook)
             {
                 stateBox.Enabled = false;
                 urlBox.Enabled = false;
@@ -95,11 +95,12 @@ namespace WindowsFormsApplication1
             outputBox.AppendText(". ");
 			fieldops.AppendAsItalic (outputBox, titleBox.Text);
             outputBox.AppendText(". " + cityBox.Text + ": " + publisherBox.Text + ", " + yearBox.Text);
-            if (medium == 0)
+
+			if (medium == (int)Mediums.Book)
             {
                 outputBox.AppendText(". Print.");
             }
-            else if (medium == 1)
+			else if (medium == (int)Mediums.eBook)
             {
                 outputBox.AppendText(". Digital File.");
             }

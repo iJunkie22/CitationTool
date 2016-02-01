@@ -11,7 +11,7 @@ using System.Diagnostics;
 
 namespace WindowsFormsApplication1
 {
-	
+	public enum Mediums {Undefined=-1, Book=0, eBook=1, Wiki=2};
 
 	static class styles 
 	{
