@@ -31,7 +31,6 @@ namespace WindowsFormsApplication1
 		static mac_stuff(){
 			PlatformID my_plat = Environment.OSVersion.Platform;
 			isMac = my_plat.Equals(PlatformID.MacOSX) || my_plat.Equals(PlatformID.Unix);
-
 		}
 
 		// This excerpt is from http://stackoverflow.com/a/33563898
@@ -134,7 +133,6 @@ namespace WindowsFormsApplication1
 			Font old_font = rtb.SelectionFont;
 			rtb.Select (i_start, i_stop); // select the target text
 			rtb.SelectionFont = new Font (rtb.Font, FontStyle.Italic); // italicize selected text
-			Console.Write (rtb.SelectionFont.Style);
 			rtb.DeselectAll();
 			rtb.AppendText (""); // Resets Selection* to capture AppendText's settings
 			rtb.SelectionFont = old_font;
