@@ -85,25 +85,13 @@
     <Compile Include="apaWindow.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="apaWindow.Designer.cs">
-      <DependentUpon>apaWindow.cs</DependentUpon>
-    </Compile>
     <Compile Include="mlaWindow.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="mlaWindow.Designer.cs">
-      <DependentUpon>mlaWindow.cs</DependentUpon>
-    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="apaWindow.resx">
-      <DependentUpon>apaWindow.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="citationStyleWindow.resx">
       <DependentUpon>citationStyleWindow.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="mlaWindow.resx">
-      <DependentUpon>mlaWindow.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -125,6 +113,15 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
     <Compile Include="Functions.cs" />
+    <Compile Include="citeFormWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <EmbeddedResource Include="citeFormWindow.resx">
+      <DependentUpon>citeFormWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <Compile Include="citeFormWindow.Designer.cs">
+      <DependentUpon>citeFormWindow.cs</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

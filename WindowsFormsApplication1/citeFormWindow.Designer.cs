@@ -5,7 +5,7 @@
         /// <summary>
         /// Required designer variable.
         /// </summary>
-        private System.ComponentModel.IContainer components = null;
+		protected System.ComponentModel.IContainer components = null;
 
         /// <summary>
         /// Clean up any resources being used.
@@ -26,7 +26,7 @@
         /// Required method for Designer support - do not modify
         /// the contents of this method with the code editor.
         /// </summary>
-        private void InitializeComponent()
+        protected void InitializeComponent()
         {
             this.titleLabel = new System.Windows.Forms.Label();
             this.authorLabel = new System.Windows.Forms.Label();
@@ -200,7 +200,7 @@
             this.generateButton.TabIndex = 8;
             this.generateButton.Text = "Generate";
             this.generateButton.UseVisualStyleBackColor = true;
-            this.generateButton.Click += new System.EventHandler(this.button1_Click);
+			this.generateButton.Click += new System.EventHandler(this.generateButton_Click);
             // 
             // urlBox
             // 
@@ -254,9 +254,9 @@
             this.Controls.Add(this.firstAuthorLabel);
             this.Controls.Add(this.authorLabel);
             this.Controls.Add(this.titleLabel);
-            this.Name = "apaWindow";
+            this.Name = "citeFormWindow";
             this.Text = "CitationTool 1.0";
-            this.Load += new System.EventHandler(this.apaWindow_Load);
+            this.Load += new System.EventHandler(this.onSelfWindow_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -264,27 +264,27 @@
 
         #endregion
 
-        private System.Windows.Forms.Label titleLabel;
-        private System.Windows.Forms.Label authorLabel;
-        private System.Windows.Forms.Label firstAuthorLabel;
-        private System.Windows.Forms.Label lastAuthorLabel;
-        private System.Windows.Forms.Label yearLabel;
-        private System.Windows.Forms.Label cityLabel;
-        private System.Windows.Forms.Label stateLabel;
-        private System.Windows.Forms.Label publisherLabel;
-        private System.Windows.Forms.TextBox titleBox;
-        private System.Windows.Forms.TextBox firstAuthorBox;
-        private System.Windows.Forms.TextBox lastAuthorBox;
-        private System.Windows.Forms.TextBox yearBox;
-        private System.Windows.Forms.TextBox stateBox;
-        private System.Windows.Forms.TextBox cityBox;
-        private System.Windows.Forms.TextBox publisherBox;
-        private System.Windows.Forms.Label outputLabel;
-        private System.Windows.Forms.RichTextBox outputBox;
-        private System.Windows.Forms.Button generateButton;
-        private System.Windows.Forms.TextBox urlBox;
-        private System.Windows.Forms.Label urlLabel;
-        private System.Windows.Forms.Button copyButton;
+        protected System.Windows.Forms.Label titleLabel;
+		protected System.Windows.Forms.Label authorLabel;
+		protected System.Windows.Forms.Label firstAuthorLabel;
+		protected System.Windows.Forms.Label lastAuthorLabel;
+		protected System.Windows.Forms.Label yearLabel;
+		protected System.Windows.Forms.Label cityLabel;
+		protected System.Windows.Forms.Label stateLabel;
+		protected System.Windows.Forms.Label publisherLabel;
+		protected System.Windows.Forms.TextBox titleBox;
+		protected System.Windows.Forms.TextBox firstAuthorBox;
+		protected System.Windows.Forms.TextBox lastAuthorBox;
+		protected System.Windows.Forms.TextBox yearBox;
+		protected System.Windows.Forms.TextBox stateBox;
+		protected System.Windows.Forms.TextBox cityBox;
+		protected System.Windows.Forms.TextBox publisherBox;
+		protected System.Windows.Forms.Label outputLabel;
+		protected System.Windows.Forms.RichTextBox outputBox;
+		protected System.Windows.Forms.Button generateButton;
+		protected System.Windows.Forms.TextBox urlBox;
+		protected System.Windows.Forms.Label urlLabel;
+		protected System.Windows.Forms.Button copyButton;
 
 
     }

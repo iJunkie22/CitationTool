@@ -10,17 +10,18 @@ using System.Windows.Forms;
 
 namespace WindowsFormsApplication1
 {
-    public partial class mlaWindow : Form
+    public partial class mlaWindow : citeFormWindow
     {
-        int medium;
 
         public mlaWindow()
         {
-            InitializeComponent();
+			if (!has_drawn) {
+				InitializeComponent ();
+			}
 			medium = (int)Mediums.Undefined;
         }
 
-        public void setMedium(int x)
+        public override void setMedium(int x)
         {
             medium = x;
 			if (medium == (int)Mediums.Book)
@@ -35,15 +36,15 @@ namespace WindowsFormsApplication1
             }
         }
 
-        private void generateButton_Click(object sender, EventArgs e)
+		protected override void generateButton_Click(object sender, EventArgs e)
         {
 			outputBox.ReadOnly = false;
-			titleBox.Text = fieldops.CapLetter (titleBox.Text, 0);
-			cityBox.Text = fieldops.CapLetter (fieldops.GetFieldText (cityBox, "Unknown City"), 0);
-			firstAuthorBox.Text = fieldops.CapLetter (firstAuthorBox.Text, 0);
-			lastAuthorBox.Text = fieldops.CapLetter (fieldops.GetFieldText (lastAuthorBox, "Unknown"), 0);
-			publisherBox.Text = fieldops.CapLetter (fieldops.GetFieldText (publisherBox, "Unknown Pubisher"), 0);
-			stateBox.Text = fieldops.GetFieldText (stateBox, "Unknown State").ToUpper ();
+			titleBox.Text = FieldOps.CapLetter (titleBox.Text, 0);
+			cityBox.Text = FieldOps.CapLetter (FieldOps.GetFieldText (cityBox, "Unknown City"), 0);
+			firstAuthorBox.Text = FieldOps.CapLetter (firstAuthorBox.Text, 0);
+			lastAuthorBox.Text = FieldOps.CapLetter (FieldOps.GetFieldText (lastAuthorBox, "Unknown"), 0);
+			publisherBox.Text = FieldOps.CapLetter (FieldOps.GetFieldText (publisherBox, "Unknown Pubisher"), 0);
+			stateBox.Text = FieldOps.GetFieldText (stateBox, "Unknown State").ToUpper ();
 
 			if (yearBox.Text.Length == 0) {
 				MessageBox.Show("Year number cannot be blank.");
@@ -77,7 +78,7 @@ namespace WindowsFormsApplication1
                 string[] firstNames = firstAuthorBox.Text.Split();
                 for (int i = 0; i < firstNames.Length; i++)
                 {
-					outputBox.AppendText(fieldops.CapLetter(firstNames[i], 0));
+					outputBox.AppendText(FieldOps.CapLetter(firstNames[i], 0));
                     if (i != firstNames.Length - 1)
                     {
                         outputBox.AppendText(" ");
@@ -93,7 +94,7 @@ namespace WindowsFormsApplication1
             }
 
             outputBox.AppendText(". ");
-			fieldops.AppendAsItalic (outputBox, titleBox.Text);
+			FieldOps.AppendAsItalic (outputBox, titleBox.Text);
             outputBox.AppendText(". " + cityBox.Text + ": " + publisherBox.Text + ", " + yearBox.Text);
 
 			if (medium == (int)Mediums.Book)
@@ -105,13 +106,6 @@ namespace WindowsFormsApplication1
                 outputBox.AppendText(". Digital File.");
             }
         }
-
-        private void copyButton_Click(object sender, EventArgs e)
-        {
-			fieldops.CopyRTBtoClipboard (outputBox);
-            MessageBox.Show("Copied to Clipboard!");
-        }
-
 			
     }
 }

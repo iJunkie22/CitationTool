@@ -10,27 +10,30 @@ using System.Windows.Forms;
 
 namespace WindowsFormsApplication1
 {
-    public class apaWindow : citeFormWindow
+    public partial class citeFormWindow : Form
     {
         /// <summary>
         /// The medium.
         /// </summary>
+        public int medium;      // 0 = book; 1 = ebook; 2 = wiki
+        protected int initialsCount;
+		protected bool has_drawn = false;
         /// <summary>
         /// Initializes a new instance of the <see cref="WindowsFormsApplication1.apaWindow"/> class.
         /// </summary>
-        public apaWindow()
+        public citeFormWindow()
         {
-			if (!has_drawn) {
-				InitializeComponent ();
-			}
+            InitializeComponent();
+			has_drawn = true;
 			medium = (int)Mediums.Undefined;
+			Console.WriteLine ("Initializing citeFormWindow");
         }
 
         /// <summary>
         /// Sets the medium.
         /// </summary>
         /// <param name="x">The x coordinate.</param>
-        public override void setMedium(int x)
+        public virtual void setMedium(int x)
         {
             medium = x;
 			if (medium == (int)Mediums.Book)
@@ -45,7 +48,7 @@ namespace WindowsFormsApplication1
             }
         }
 
-		protected override void generateButton_Click(object sender, EventArgs e)
+		protected virtual void generateButton_Click(object sender, EventArgs e)
         {
 			outputBox.ReadOnly = false;
 			if (!capitalizeFirstLetter ()) {
@@ -85,9 +88,34 @@ namespace WindowsFormsApplication1
             }
         }
 
-        private void onSelfWindow_Load(object sender, EventArgs e)
+        protected virtual void onSelfWindow_Load(object sender, EventArgs e)
         {
 
+        }
+
+        protected void copyButton_Click(object sender, EventArgs e)
+        {
+			FieldOps.CopyRTBtoClipboard (outputBox);
+            MessageBox.Show("Copied to Clipboard!");
+
+        }
+
+        protected bool capitalizeFirstLetter()
+        {
+			try 
+			{
+            	//Capitalize first letter of each appropriate box
+            	titleBox.Text = titleBox.Text.Substring(0, 1).ToUpper() + titleBox.Text.Substring(1);
+            	cityBox.Text = cityBox.Text.Substring(0, 1).ToUpper() + cityBox.Text.Substring(1);
+            	lastAuthorBox.Text = lastAuthorBox.Text.Substring(0, 1).ToUpper() + lastAuthorBox.Text.Substring(1);
+            	publisherBox.Text = publisherBox.Text.Substring(0, 1).ToUpper() + publisherBox.Text.Substring(1);
+				return true;
+			}
+			catch
+			{
+				MessageBox.Show("Do not leave fields blank.");
+				return false;
+			}
         }
 			
     }

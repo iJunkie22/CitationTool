@@ -36,6 +36,7 @@ namespace WindowsFormsApplication1
             if (allowed&&allowed2) { 
                 // APA
                 this.Hide();
+
                 if (styleBox.SelectedIndex == 0)
                 {
                     apaWindow apa = new apaWindow();

@@ -102,7 +102,7 @@ namespace WindowsFormsApplication1
 
 	}
 
-	static class fieldops
+	static class FieldOps
 	{
 		static public string CapLetter(string lc_str, int cap_pos)
 		{
