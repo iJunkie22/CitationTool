@@ -35,57 +35,57 @@ namespace WindowsFormsApplication1
             medium = x;
 			if (medium == (int)Mediums.Book)
             {
-                urlBox.Enabled = false;
+                txtInUrl.Enabled = false;
             }
 			else if(medium == (int)Mediums.eBook)
             {
-                cityBox.Enabled = false;
-                stateBox.Enabled = false;
-                publisherBox.Enabled = false;
+                txtInCity.Enabled = false;
+                txtInState.Enabled = false;
+                txtInPublisher.Enabled = false;
             }
         }
 
-		protected override void generateButton_Click(object sender, EventArgs e)
+		protected override void btnGenerate_Click(object sender, EventArgs e)
         {
-			outputBox.ReadOnly = false;
+			rtfOutGenerated.ReadOnly = false;
 			if (!capitalizeFirstLetter ()) {
-				outputBox.Text = "Invalid Fields";
-				outputBox.ReadOnly = true;
+				rtfOutGenerated.Text = "Invalid Fields";
+				rtfOutGenerated.ReadOnly = true;
 				return; // Stop progression
 			};
-            outputBox.Text = lastAuthorBox.Text + ", " ;
+            rtfOutGenerated.Text = txtInAuthorLN.Text + ", " ;
             // Get Initials
             try {
-                string[] firstNames = firstAuthorBox.Text.Split();
+                string[] firstNames = txtInAuthorFN.Text.Split();
                 initialsCount = firstNames.Length;
                 for(int i=0; i<firstNames.Length; i++)
                 {
-                    outputBox.AppendText(firstNames[i].Substring(0, 1).ToUpper() + ".");
+                    rtfOutGenerated.AppendText(firstNames[i].Substring(0, 1).ToUpper() + ".");
                 }
             }
             catch {
                 MessageBox.Show("Author Names cannot be blank.");
-				outputBox.Text = "Invalid Fields";
-				outputBox.ReadOnly = true;
+				rtfOutGenerated.Text = "Invalid Fields";
+				rtfOutGenerated.ReadOnly = true;
 				return; // Stop progression
             }
             
-            outputBox.AppendText(" " + yearBox.Text + ". ");
-			FieldOps.AppendAsItalic (outputBox, titleBox.Text);
+            rtfOutGenerated.AppendText(" " + txtInYear.Text + ". ");
+			FieldOps.AppendAsItalic (rtfOutGenerated, txtInTitle.Text);
 
             //If Book
 			if (medium == (int)Mediums.Book)
             {
-                outputBox.AppendText(". " + cityBox.Text + ", " + stateBox.Text.ToUpper() + ": " + publisherBox.Text + ".");
+                rtfOutGenerated.AppendText(". " + txtInCity.Text + ", " + txtInState.Text.ToUpper() + ": " + txtInPublisher.Text + ".");
             }
             //If ebook
 			else if (medium== (int)Mediums.eBook)
             {
-                outputBox.AppendText(" [E-Reader Version]. Retrieved from " + urlBox.Text);
+                rtfOutGenerated.AppendText(" [E-Reader Version]. Retrieved from " + txtInUrl.Text);
             }
         }
 
-        private void onSelfWindow_Load(object sender, EventArgs e)
+        protected override void onSelfWindow_Load(object sender, EventArgs e)
         {
 
         }

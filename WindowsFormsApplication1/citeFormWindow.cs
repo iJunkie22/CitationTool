@@ -38,53 +38,53 @@ namespace WindowsFormsApplication1
             medium = x;
 			if (medium == (int)Mediums.Book)
             {
-                urlBox.Enabled = false;
+                txtInUrl.Enabled = false;
             }
 			else if(medium == (int)Mediums.eBook)
             {
-                cityBox.Enabled = false;
-                stateBox.Enabled = false;
-                publisherBox.Enabled = false;
+                txtInCity.Enabled = false;
+                txtInState.Enabled = false;
+                txtInPublisher.Enabled = false;
             }
         }
 
-		protected virtual void generateButton_Click(object sender, EventArgs e)
+		protected virtual void btnGenerate_Click(object sender, EventArgs e)
         {
-			outputBox.ReadOnly = false;
+			rtfOutGenerated.ReadOnly = false;
 			if (!capitalizeFirstLetter ()) {
-				outputBox.Text = "Invalid Fields";
-				outputBox.ReadOnly = true;
+				rtfOutGenerated.Text = "Invalid Fields";
+				rtfOutGenerated.ReadOnly = true;
 				return; // Stop progression
 			};
-            outputBox.Text = lastAuthorBox.Text + ", " ;
+            rtfOutGenerated.Text = txtInAuthorLN.Text + ", " ;
             // Get Initials
             try {
-                string[] firstNames = firstAuthorBox.Text.Split();
+                string[] firstNames = txtInAuthorFN.Text.Split();
                 initialsCount = firstNames.Length;
                 for(int i=0; i<firstNames.Length; i++)
                 {
-                    outputBox.AppendText(firstNames[i].Substring(0, 1).ToUpper() + ".");
+                    rtfOutGenerated.AppendText(firstNames[i].Substring(0, 1).ToUpper() + ".");
                 }
             }
             catch {
                 MessageBox.Show("Author Names cannot be blank.");
-				outputBox.Text = "Invalid Fields";
-				outputBox.ReadOnly = true;
+				rtfOutGenerated.Text = "Invalid Fields";
+				rtfOutGenerated.ReadOnly = true;
 				return; // Stop progression
             }
             
-            outputBox.AppendText(" " + yearBox.Text + ". ");
-			FieldOps.AppendAsItalic (outputBox, titleBox.Text);
+            rtfOutGenerated.AppendText(" " + txtInYear.Text + ". ");
+			FieldOps.AppendAsItalic (rtfOutGenerated, txtInTitle.Text);
 
             //If Book
 			if (medium == (int)Mediums.Book)
             {
-                outputBox.AppendText(". " + cityBox.Text + ", " + stateBox.Text.ToUpper() + ": " + publisherBox.Text + ".");
+                rtfOutGenerated.AppendText(". " + txtInCity.Text + ", " + txtInState.Text.ToUpper() + ": " + txtInPublisher.Text + ".");
             }
             //If ebook
 			else if (medium== (int)Mediums.eBook)
             {
-                outputBox.AppendText(" [E-Reader Version]. Retrieved from " + urlBox.Text);
+                rtfOutGenerated.AppendText(" [E-Reader Version]. Retrieved from " + txtInUrl.Text);
             }
         }
 
@@ -93,9 +93,9 @@ namespace WindowsFormsApplication1
 
         }
 
-        protected void copyButton_Click(object sender, EventArgs e)
+        protected void btnCopy_Click(object sender, EventArgs e)
         {
-			FieldOps.CopyRTBtoClipboard (outputBox);
+			FieldOps.CopyRTBtoClipboard (rtfOutGenerated);
             MessageBox.Show("Copied to Clipboard!");
 
         }
@@ -105,10 +105,10 @@ namespace WindowsFormsApplication1
 			try 
 			{
             	//Capitalize first letter of each appropriate box
-            	titleBox.Text = titleBox.Text.Substring(0, 1).ToUpper() + titleBox.Text.Substring(1);
-            	cityBox.Text = cityBox.Text.Substring(0, 1).ToUpper() + cityBox.Text.Substring(1);
-            	lastAuthorBox.Text = lastAuthorBox.Text.Substring(0, 1).ToUpper() + lastAuthorBox.Text.Substring(1);
-            	publisherBox.Text = publisherBox.Text.Substring(0, 1).ToUpper() + publisherBox.Text.Substring(1);
+            	txtInTitle.Text = txtInTitle.Text.Substring(0, 1).ToUpper() + txtInTitle.Text.Substring(1);
+            	txtInCity.Text = txtInCity.Text.Substring(0, 1).ToUpper() + txtInCity.Text.Substring(1);
+            	txtInAuthorLN.Text = txtInAuthorLN.Text.Substring(0, 1).ToUpper() + txtInAuthorLN.Text.Substring(1);
+            	txtInPublisher.Text = txtInPublisher.Text.Substring(0, 1).ToUpper() + txtInPublisher.Text.Substring(1);
 				return true;
 			}
 			catch

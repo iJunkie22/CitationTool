@@ -24,86 +24,89 @@ namespace WindowsFormsApplication1
         public override void setMedium(int x)
         {
             medium = x;
+			Console.Write ("testing mla medium");
+			Console.Write (medium);
 			if (medium == (int)Mediums.Book)
             {
-                urlBox.Enabled = false;
-                stateBox.Enabled = false;
+                txtInUrl.Enabled = false;
+                txtInState.Enabled = false;
             }
 			else if (medium == (int)Mediums.eBook)
             {
-                stateBox.Enabled = false;
-                urlBox.Enabled = false;
+                txtInState.Enabled = false;
+                txtInUrl.Enabled = false;
             }
+			Console.WriteLine (txtInState.Enabled);
         }
 
-		protected override void generateButton_Click(object sender, EventArgs e)
+		protected override void btnGenerate_Click(object sender, EventArgs e)
         {
-			outputBox.ReadOnly = false;
-			titleBox.Text = FieldOps.CapLetter (titleBox.Text, 0);
-			cityBox.Text = FieldOps.CapLetter (FieldOps.GetFieldText (cityBox, "Unknown City"), 0);
-			firstAuthorBox.Text = FieldOps.CapLetter (firstAuthorBox.Text, 0);
-			lastAuthorBox.Text = FieldOps.CapLetter (FieldOps.GetFieldText (lastAuthorBox, "Unknown"), 0);
-			publisherBox.Text = FieldOps.CapLetter (FieldOps.GetFieldText (publisherBox, "Unknown Pubisher"), 0);
-			stateBox.Text = FieldOps.GetFieldText (stateBox, "Unknown State").ToUpper ();
+			rtfOutGenerated.ReadOnly = false;
+			txtInTitle.Text = FieldOps.CapLetter (txtInTitle.Text, 0);
+			txtInCity.Text = FieldOps.CapLetter (FieldOps.GetFieldText (txtInCity, "Unknown City"), 0);
+			txtInAuthorFN.Text = FieldOps.CapLetter (txtInAuthorFN.Text, 0);
+			txtInAuthorLN.Text = FieldOps.CapLetter (FieldOps.GetFieldText (txtInAuthorLN, "Unknown"), 0);
+			txtInPublisher.Text = FieldOps.CapLetter (FieldOps.GetFieldText (txtInPublisher, "Unknown Pubisher"), 0);
+			txtInState.Text = FieldOps.GetFieldText (txtInState, "Unknown State").ToUpper ();
 
-			if (yearBox.Text.Length == 0) {
+			if (txtInYear.Text.Length == 0) {
 				MessageBox.Show("Year number cannot be blank.");
-				outputBox.Text = "Invalid Fields";
-				outputBox.ReadOnly = true;
+				rtfOutGenerated.Text = "Invalid Fields";
+				rtfOutGenerated.ReadOnly = true;
 				return; // Stop progression
 			}
 
-			if (titleBox.Text.Length == 0) {
+			if (txtInTitle.Text.Length == 0) {
 				MessageBox.Show("Title cannot be blank.");
-				outputBox.Text = "Invalid Fields";
-				outputBox.ReadOnly = true;
+				rtfOutGenerated.Text = "Invalid Fields";
+				rtfOutGenerated.ReadOnly = true;
 				return; // Stop progression
 			}
 			/*
 
 			if (!capitalizeFirstLetter ()) {
-				outputBox.Text = "Invalid Fields";
-				outputBox.ReadOnly = true;
+				rtfOutGenerated.Text = "Invalid Fields";
+				rtfOutGenerated.ReadOnly = true;
 				return; // Stop progrlastession
 			};
 			*/
 
-			outputBox.Text = lastAuthorBox.Text;
-			if (firstAuthorBox.Text.Length > 0) {
-				outputBox.AppendText (", "); // only add comma if fname is defined
+			rtfOutGenerated.Text = txtInAuthorLN.Text;
+			if (txtInAuthorFN.Text.Length > 0) {
+				rtfOutGenerated.AppendText (", "); // only add comma if fname is defined
 			}
             // Capitalize first letter of each name
             try
             {
-                string[] firstNames = firstAuthorBox.Text.Split();
+                string[] firstNames = txtInAuthorFN.Text.Split();
                 for (int i = 0; i < firstNames.Length; i++)
                 {
-					outputBox.AppendText(FieldOps.CapLetter(firstNames[i], 0));
+					rtfOutGenerated.AppendText(FieldOps.CapLetter(firstNames[i], 0));
                     if (i != firstNames.Length - 1)
                     {
-                        outputBox.AppendText(" ");
+                        rtfOutGenerated.AppendText(" ");
                     }
                 }   
             }
             catch
             {
                 MessageBox.Show("Author Names cannot be blank.");
-				outputBox.Text = "Invalid Fields";
-				outputBox.ReadOnly = true;
+				rtfOutGenerated.Text = "Invalid Fields";
+				rtfOutGenerated.ReadOnly = true;
 				return; // Stop progression
             }
 
-            outputBox.AppendText(". ");
-			FieldOps.AppendAsItalic (outputBox, titleBox.Text);
-            outputBox.AppendText(". " + cityBox.Text + ": " + publisherBox.Text + ", " + yearBox.Text);
+            rtfOutGenerated.AppendText(". ");
+			FieldOps.AppendAsItalic (rtfOutGenerated, txtInTitle.Text);
+            rtfOutGenerated.AppendText(". " + txtInCity.Text + ": " + txtInPublisher.Text + ", " + txtInYear.Text);
 
 			if (medium == (int)Mediums.Book)
             {
-                outputBox.AppendText(". Print.");
+                rtfOutGenerated.AppendText(". Print.");
             }
 			else if (medium == (int)Mediums.eBook)
             {
-                outputBox.AppendText(". Digital File.");
+                rtfOutGenerated.AppendText(". Digital File.");
             }
         }
 			
